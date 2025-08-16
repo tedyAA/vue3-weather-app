@@ -14,6 +14,10 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
+  test:{
+    globals: true,
+    environment: 'jsdom',
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
