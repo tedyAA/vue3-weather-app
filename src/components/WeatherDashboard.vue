@@ -41,5 +41,9 @@ const hasWeather = computed(() => !isEmpty(store.weatherData))
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../assets/images/clouds.jpg");
+
+  @media (max-width: 700px) {
+    height: 100% !important;
+  }
 }
 </style>
