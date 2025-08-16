@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 export const useWeatherStore = defineStore('weather', () => {
   const apiKey = '1cf838aa8644549473bdf55ad4147ca1' // Replace with your OpenWeather API key :)
@@ -7,19 +7,27 @@ export const useWeatherStore = defineStore('weather', () => {
   const weatherData = ref(null)
 
   const loading = ref(false)
-  const error = ref(null)
+  const error = ref(false)
+  const errorCode = ref(null)
+  const errorMessage = ref(null)
 
   async function fetchWeather(city) {
     loading.value = true
-    error.value = null
+    error.value = false
     try {
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       )
+      if (!res.ok) {
+        // OpenWeather error structure
+        errorCode.value = res.status
+        errorMessage.value = res.statusText
+        error.value = true
+      }
+
       weatherData.value = await res.json()
-      
     } catch (err) {
-      error.value = err.message
+      console.log(err)
     } finally {
       loading.value = false
     }
@@ -30,5 +38,7 @@ export const useWeatherStore = defineStore('weather', () => {
     loading,
     error,
     fetchWeather,
+    errorCode,
+    errorMessage,
   }
 })
