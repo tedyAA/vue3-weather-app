@@ -1,6 +1,20 @@
 # vue3-weather-app
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3 Weather App
+
+A modern weather application built with Vue 3, Pinia, and Tailwind CSS, displaying both current weather and a 5-day forecast using the OpenWeather API. The app features responsive design and loading skeletons.
+
+Features
+
+Current Weather: Displays city name, temperature, weather description, and icon.
+
+5-Day Forecast: Shows temperature ranges, daily icons, and formatted dates.
+
+Responsive Design: Mobile-friendly with Tailwind CSS grid layouts.
+
+Loading States: Skeleton and pulsing loading components for smoother UX.
+
+Error Handling: Displays API errors with custom messages.
 
 ## Recommended IDE Setup
 
