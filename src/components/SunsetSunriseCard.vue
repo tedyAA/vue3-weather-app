@@ -1,6 +1,6 @@
 <script setup>
 
-import { currentTimeBuilder, timeBuilder } from '@/helpers/index.js'
+import { timeBuilder } from '@/helpers/index.js'
 import { defineProps } from '../../.vite/deps/chunk-5QRJQEQG.js'
 import SunsetSunriseCardLoading from '@/components/loading/SunsetSunriseCardLoading.vue'
 import { useWeatherStore } from '@/stores/weather.js'
@@ -9,7 +9,8 @@ const store = useWeatherStore()
 
 defineProps({
   sunset: Number,
-  sunrise: Number
+  sunrise: Number,
+  dt: Number
 });
 </script>
 
@@ -24,11 +25,6 @@ defineProps({
         <span class="ml-1 mr-1"/>
         <p class="text-white md:text-2xl my-auto">{{timeBuilder(sunrise)}}</p>
       </div>
-      <span class="ml-1 mr-1"/>
-      <p class="text-white md:text-2xl my-auto hidden sm:block"> - - - </p>
-      <p class="text-white md:text-2xl my-auto sm:hidden">-</p>
-      <span class="ml-1 mr-1"/>
-      <div class="text-white md:text-2xl font-light italic text-center my-auto">{{ currentTimeBuilder() }}</div>
       <span class="ml-1 mr-1"/>
       <p class="text-white md:text-2xl my-auto hidden sm:block"> - - - </p>
       <p class="text-white md:text-2xl my-auto sm:hidden">-</p>
