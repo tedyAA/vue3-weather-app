@@ -3,6 +3,7 @@
     <SearchBox @getWeather="getWeather"/>
     <ErrorBox v-if="store.error"/>
     <WeatherCard v-if="hasWeather && !store.error"/>
+    <SunsetSunriseCard v-if="hasWeather && !store.error" :sunset="store.weatherData.sys.sunset" :sunrise="store.weatherData.sys.sunrise"/>
     <ForecastList/>
   </div>
 </template>
@@ -15,6 +16,7 @@ import ErrorBox from '@/components/ErrorBox.vue'
 import WeatherCard from '@/components/WeatherCard.vue'
 import { isEmpty } from 'lodash'
 import ForecastList from '@/components/ForecastList.vue'
+import SunsetSunriseCard from '@/components/SunsetSunriseCard.vue'
 
 const beforeCity = ref('sofia')
 const store = useWeatherStore()
