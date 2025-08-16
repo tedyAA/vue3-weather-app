@@ -15,6 +15,7 @@
         <p>{{ weatherTemp }}°C</p>
       </div>
     </div>
+<!--    <p>Feels Like {{ feelsLikeTemp }}°C</p>-->
     <div class="text-white text-center text-[48px] font-bold italic">{{ weatherProg }}</div>
   </div>
 </template>
@@ -32,6 +33,8 @@ const cityName = computed(() => store.weatherData.name)
 const weatherProg = computed(() => store.weatherData.weather[0].description)
 
 const weatherTemp = computed(() => Math.round(store.weatherData.main.temp))
+
+const feelsLikeTemp = computed(() => Math.round(store.weatherData.main.feels_like))
 </script>
 
 <style scoped>
