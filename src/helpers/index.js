@@ -14,3 +14,16 @@ export function dateBuilderDDMY(d) {
   let year = d.getFullYear()
   return `${day} ${date} ${month} ${year}`;
 }
+
+export function dateBuilderDD(timestamp) {
+  const date = new Date(timestamp * 1000);
+
+  const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
+  const day = date.getDate();
+
+  return `${weekday} ${day}`;
+}
+
+export function kelvinToCelsius(temp){
+  return Math.round((temp - 272))
+}
