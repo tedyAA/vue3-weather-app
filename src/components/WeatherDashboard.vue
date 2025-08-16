@@ -13,7 +13,6 @@ import { computed, onMounted, ref } from 'vue'
 import ErrorBox from '@/components/ErrorBox.vue'
 import WeatherCard from '@/components/WeatherCard.vue'
 import { isEmpty } from 'lodash'
-import WeatherCardLoading from '@/components/loading/WeatherCardLoading.vue'
 
 const beforeCity = ref('sofia')
 const store = useWeatherStore()
