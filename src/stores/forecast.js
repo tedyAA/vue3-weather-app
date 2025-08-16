@@ -10,6 +10,9 @@ export const useForecastStore = defineStore('forecast', () => {
 
 
   async function fetchForecast(city) {
+    loading.value = true
+    error.value = false
+
     try {
       const res = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
@@ -20,7 +23,12 @@ export const useForecastStore = defineStore('forecast', () => {
     } catch (err) {
       error.value = err.message
     } finally {
-      loading.value = false
+      // This delay is only for one purpose
+      // to show loading components
+
+      setTimeout(() => {
+        loading.value = false
+      }, 3000);
     }
   }
 

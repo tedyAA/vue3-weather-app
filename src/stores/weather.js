@@ -20,7 +20,6 @@ export const useWeatherStore = defineStore('weather', () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       )
       if (!res.ok) {
-        // OpenWeather error structure
         errorCode.value = res.status
         errorMessage.value = res.statusText
         error.value = true
@@ -30,10 +29,15 @@ export const useWeatherStore = defineStore('weather', () => {
     } catch (err) {
       console.log(err)
     } finally {
-      loading.value = false
-
       const forecastStore = useForecastStore()
       await forecastStore.fetchForecast(city)
+
+      // This delay is only for one purpose
+      // to show loading components
+      
+      setTimeout(() => {
+        loading.value = false
+      }, 3000);
     }
   }
 
