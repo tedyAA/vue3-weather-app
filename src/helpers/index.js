@@ -24,6 +24,24 @@ export function dateBuilderDD(timestamp) {
   return `${weekday} ${day}`;
 }
 
+export function timeBuilder(timestamp) {
+  const date = new Date(timestamp * 1000);
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${hours}: ${minutes}`;
+}
+
+export function currentTimeBuilder() {
+  const date = new Date();
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${hours}: ${minutes}`;
+}
+
 export function kelvinToCelsius(temp){
   return Math.round((temp - 272))
 }
