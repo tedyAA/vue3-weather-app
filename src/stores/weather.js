@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { useForecastStore } from '@/stores/forecast.js'
 
 export const useWeatherStore = defineStore('weather', () => {
   const apiKey = '1cf838aa8644549473bdf55ad4147ca1' // Replace with your OpenWeather API key :)
@@ -30,6 +31,9 @@ export const useWeatherStore = defineStore('weather', () => {
       console.log(err)
     } finally {
       loading.value = false
+
+      const forecastStore = useForecastStore()
+      await forecastStore.fetchForecast(city)
     }
   }
 
