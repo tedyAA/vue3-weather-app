@@ -2,14 +2,18 @@
   <div class="wrapper p-4">
     <SearchBox @getWeather="getWeather"/>
     <ErrorBox v-if="store.error"/>
+    <WeatherCard v-if="hasWeather && !store.error"/>
   </div>
 </template>
 
 <script setup>
 import SearchBox from '@/components/SearchBox.vue'
 import { useWeatherStore } from '@/stores/weather.js'
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import ErrorBox from '@/components/ErrorBox.vue'
+import WeatherCard from '@/components/WeatherCard.vue'
+import { isEmpty } from 'lodash'
+import WeatherCardLoading from '@/components/loading/WeatherCardLoading.vue'
 
 const beforeCity = ref('sofia')
 const store = useWeatherStore()
@@ -23,6 +27,8 @@ onMounted(() => {
 function getWeather(city) {
   fetchWeather(city)
 }
+
+const hasWeather = computed(() => !isEmpty(store.weatherData))
 
 </script>
 <style scoped>
