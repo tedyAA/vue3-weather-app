@@ -34,7 +34,7 @@ export const useWeatherStore = defineStore('weather', () => {
 
       // This delay is only for one purpose
       // to show loading components
-      
+
       setTimeout(() => {
         loading.value = false
       }, 3000);
