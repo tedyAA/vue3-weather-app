@@ -2,10 +2,13 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 export const useForecastStore = defineStore('forecast', () => {
-  const apiKey = '1cf838aa8644549473bdf55ad4147ca1' // Replace with your OpenWeather API key :)
-
+  // Replace with your OpenWeather API key :)
+  const apiKey = '1cf838aa8644549473bdf55ad4147ca1'
+  // Forecast data stored here
   const forecastData = ref(null)
+  // Flag used to check if data still loading
   const loading = ref(false)
+  // Contains error message if there is one
   const error = ref(null)
 
 
@@ -18,17 +21,16 @@ export const useForecastStore = defineStore('forecast', () => {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
       )
       forecastData.value = await res.json()
-      forecastData.value = forecastData.value.list.filter((item) =>forecastData.value.list.indexOf(item) % 8 === 0)
+      forecastData.value = forecastData.value.list.filter((item) => forecastData.value.list.indexOf(item) % 8 === 0)
 
     } catch (err) {
       error.value = err.message
     } finally {
-      // This delay is only for one purpose
-      // to show loading components
+      // This delay is used to show loading components
 
       setTimeout(() => {
         loading.value = false
-      }, 3000);
+      }, 3000)
     }
   }
 

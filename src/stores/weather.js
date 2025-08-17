@@ -4,12 +4,16 @@ import { useForecastStore } from '@/stores/forecast.js'
 
 export const useWeatherStore = defineStore('weather', () => {
   const apiKey = '1cf838aa8644549473bdf55ad4147ca1' // Replace with your OpenWeather API key :)
-
+  // Weather data stored here
   const weatherData = ref(null)
 
+  // Flag used to check if data still loading
   const loading = ref(false)
+  // Contains error if there is one
   const error = ref(false)
+  // Contains error code if there is one
   const errorCode = ref(null)
+  // Contains error message if there is one
   const errorMessage = ref(null)
 
   async function fetchWeather(city) {
