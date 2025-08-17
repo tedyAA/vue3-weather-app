@@ -19,6 +19,8 @@ import ForecastList from '@/components/ForecastList.vue'
 import SunsetSunriseCard from '@/components/SunsetSunriseCard.vue'
 import { useForecastStore } from '@/stores/forecast.js'
 
+// The main component that checks if weather and forecast are present and loads all
+// the app components
 const beforeCity = ref('sofia')
 const store = useWeatherStore()
 
