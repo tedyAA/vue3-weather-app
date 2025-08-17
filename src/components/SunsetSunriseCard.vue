@@ -1,19 +1,3 @@
-<script setup>
-
-import { timeBuilder } from '@/helpers/index.js'
-import { defineProps } from '../../.vite/deps/chunk-5QRJQEQG.js'
-import SunsetSunriseCardLoading from '@/components/loading/SunsetSunriseCardLoading.vue'
-import { useWeatherStore } from '@/stores/weather.js'
-
-const store = useWeatherStore()
-
-defineProps({
-  sunset: Number,
-  sunrise: Number,
-  dt: Number
-});
-</script>
-
 <template>
   <div class="flex justify-center">
     <SunsetSunriseCardLoading v-if="store.loading"/>
@@ -40,6 +24,18 @@ defineProps({
   </div>
 </template>
 
-<style scoped>
+<script setup>
 
-</style>
+import { timeBuilder } from '@/helpers/index.js'
+import { defineProps } from '../../.vite/deps/chunk-5QRJQEQG.js'
+import SunsetSunriseCardLoading from '@/components/loading/SunsetSunriseCardLoading.vue'
+import { useWeatherStore } from '@/stores/weather.js'
+
+const store = useWeatherStore()
+
+defineProps({
+  sunset: Number,
+  sunrise: Number,
+  dt: Number
+});
+</script>
