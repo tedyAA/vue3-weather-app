@@ -42,15 +42,15 @@ const hasForecast = computed(() => !isEmpty(forecastStore.forecastData))
 
 </script>
 <style scoped>
-.wrapper{
+.wrapper {
   padding: 40px;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../assets/images/clouds.jpg");
 
   @media (max-width: 700px) {
-    height: 100% !important;
+    min-height: 100% !important;
   }
 }
 </style>

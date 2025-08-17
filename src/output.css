@@ -560,3 +560,8 @@ video {
 .font-merriweather{
   font-family: 'Merriweather', serif;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
