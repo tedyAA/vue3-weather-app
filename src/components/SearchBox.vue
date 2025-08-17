@@ -11,6 +11,7 @@
 </template>
 
 <script setup>
+// Search component that gets user input and emits event to parent component
 import { ref } from 'vue'
 
 const city = ref('')
