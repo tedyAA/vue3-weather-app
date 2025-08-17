@@ -47,3 +47,8 @@ npm run build
 ```sh
 npm run lint
 ```
+### Openweather API Key
+```sh
+
+Place yout API KEY in both stores (forecast, weather) :)
+```
