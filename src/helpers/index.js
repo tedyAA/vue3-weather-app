@@ -1,5 +1,6 @@
 import {isEmpty} from "lodash";
 
+// Function that returns time in format day date month year
 export function dateBuilderDDMY(d) {
   if(!isEmpty(d)) {
     d = new Date(d);
@@ -15,6 +16,7 @@ export function dateBuilderDDMY(d) {
   return `${day} ${date} ${month} ${year}`;
 }
 
+// Function that returns time in format weekday day
 export function dateBuilderDD(timestamp) {
   const date = new Date(timestamp * 1000);
 
@@ -24,6 +26,7 @@ export function dateBuilderDD(timestamp) {
   return `${weekday} ${day}`;
 }
 
+// Function that returns time in format HH:MM
 export function timeBuilder(timestamp) {
   const date = new Date(timestamp * 1000);
 
@@ -33,14 +36,7 @@ export function timeBuilder(timestamp) {
   return `${hours}: ${minutes}`;
 }
 
-export function currentTimeBuilder() {
-  const date = new Date();
-
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-
-  return `${hours}: ${minutes}`;
-}
+// Simple function that calculates the temperature from kelvins to Celsius
 
 export function kelvinToCelsius(temp){
   return Math.round((temp - 272))
