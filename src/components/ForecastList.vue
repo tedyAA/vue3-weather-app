@@ -3,9 +3,9 @@
     <!-- Displays loader while the forecast data is still loading -->
     <ForecastCardLoading v-if="store.loading" />
     <!--    Loops through forecast if available and renders ForecastCard-->
-    <div v-else class="grid w-fit gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 justify-items-center">
+    <div v-else class="grid w-fit gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center">
       <div v-for="(item, index) in store.forecastData" :key="index"
-           class="flex items-center justify-center justify-self-center last:col-span-2">
+           class="flex items-center justify-center last:col-span-2 last:justify-self-center md:last:col-span-1 md:last:justify-self-auto">
         <ForecastCard :forecast="item" />
       </div>
     </div>
