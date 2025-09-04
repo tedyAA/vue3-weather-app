@@ -50,5 +50,5 @@ npm run lint
 ### Openweather API Key
 ```sh
 
-Place yout API KEY in both stores (forecast, weather) :)
+Create .env.development file and place your api key there in order for both stores to work :)
 ```
