@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 
 export const useForecastStore = defineStore('forecast', () => {
   // Replace with your OpenWeather API key :)
-  const apiKey = '1cf838aa8644549473bdf55ad4147ca1'
+  const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY; // Replace with your OpenWeather API key :)
   // Forecast data stored here
   const forecastData = ref(null)
   // Flag used to check if data still loading

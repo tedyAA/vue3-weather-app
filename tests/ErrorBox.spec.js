@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
-import ErrorBox from '@/components/ErrorBox.vue'
+import ErrorBox from '@/components/global/ErrorBox.vue'
 import { useWeatherStore } from '@/stores/weather.js'
 
 describe('ErrorBox.vue', () => {

@@ -18,8 +18,8 @@
 
 <script setup>
 // Simple component used to display weather date, icon and min and max temperature
-import { defineProps } from '../../.vite/deps/chunk-5QRJQEQG.js'
-import { dateBuilderDD, kelvinToCelsius } from '../helpers/index.js'
+import { defineProps } from '../../../.vite/deps/chunk-5QRJQEQG.js'
+import { dateBuilderDD, kelvinToCelsius } from '../../helpers/index.js'
 
 defineProps({
   forecast: Object

@@ -9,14 +9,14 @@
 </template>
 
 <script setup>
-import SearchBox from '@/components/SearchBox.vue'
+import SearchBox from '@/components/global/SearchBox.vue'
 import { useWeatherStore } from '@/stores/weather.js'
 import { computed, onMounted, ref } from 'vue'
-import ErrorBox from '@/components/ErrorBox.vue'
-import WeatherCard from '@/components/WeatherCard.vue'
+import ErrorBox from '@/components/global/ErrorBox.vue'
+import WeatherCard from '@/components/weather/WeatherCard.vue'
 import { isEmpty } from 'lodash'
-import ForecastList from '@/components/ForecastList.vue'
-import SunsetSunriseCard from '@/components/SunsetSunriseCard.vue'
+import ForecastList from '@/components/forecast/ForecastList.vue'
+import SunsetSunriseCard from '@/components/weather/SunsetSunriseCard.vue'
 import { useForecastStore } from '@/stores/forecast.js'
 
 // The main component that checks if weather and forecast are present and loads all

@@ -40,7 +40,7 @@
 // Simple component that displays sunrise and sunset data from weather response
 
 import { timeBuilder } from '@/helpers/index.js'
-import { defineProps } from '../../.vite/deps/chunk-5QRJQEQG.js'
+import { defineProps } from '../../../.vite/deps/chunk-5QRJQEQG.js'
 import SunsetSunriseCardLoading from '@/components/loading/SunsetSunriseCardLoading.vue'
 import { useWeatherStore } from '@/stores/weather.js'
 
