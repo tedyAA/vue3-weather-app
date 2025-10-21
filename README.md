@@ -1,30 +1,48 @@
-# vue3-weather-app
+# 🌦️ Vue 3 Weather App
 
-Vue 3 Weather App
+> A sleek, modern and responsive weather dashboard built with **Vue 3**, **Pinia**, and **Tailwind CSS**, fetching real-time data from the **OpenWeather API**.  
+> Displays current conditions and a 5-day forecast — beautifully animated, responsive, and lightning fast ⚡.
 
-A modern weather application built with Vue 3, Pinia, and Tailwind CSS, displaying both current weather and a 5-day forecast using the OpenWeather API. The app features responsive design and loading skeletons.
+---
+<img width="1909" height="970" alt="image" src="https://github.com/user-attachments/assets/0f64e4e1-b7cb-4f7d-9962-b3c596861b8a" />
 
-Features
+## 🌟 Features
 
-Current Weather: Displays city name, temperature, weather description, and icon.
+✅ **Current Weather**  
+Displays the current city name, temperature, weather icon, and conditions in real-time.
 
-5-Day Forecast: Shows temperature ranges, daily icons, and formatted dates.
+🌤 **5-Day Forecast**  
+Shows temperature ranges, weather icons, and formatted daily timestamps.
 
-Responsive Design: Mobile-friendly with Tailwind CSS grid layouts.
+📱 **Responsive Design**  
+Built with Tailwind CSS for a fully mobile-friendly, adaptive layout.
 
-Loading States: Skeleton and pulsing loading components for smoother UX.
+💨 **Smooth Loading States**  
+Includes skeletons and pulsing loaders for a polished user experience.
 
-Error Handling: Displays API errors with custom messages.
+🚨 **Error Handling**  
+Custom error boxes display meaningful messages when the API fails or returns invalid data.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🧠 Tech Stack
 
-## Customize configuration
+- ⚙️ **Vue 3** (Composition API + `<script setup>`)
+- 🗂 **Pinia** (State Management)
+- 💅 **Tailwind CSS** (Responsive Styling)
+- 🌤 **OpenWeather API** (Weather Data)
+- 🚀 **Vite** (Lightning-fast Dev & Build)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🧰 Project Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/vue3-weather-app.git
+cd vue3-weather-app
+```
 
 ```sh
 npm install
@@ -47,8 +65,9 @@ npm run build
 ```sh
 npm run lint
 ```
-### Openweather API Key
-```sh
+### 🔑 OpenWeather API Key Setup
+To make API calls work, create an .env.development file in your project root and add your API key:
 
-Create .env.development file and place your api key there in order for both stores to work :)
+```sh
+VITE_OPENWEATHER_API_KEY=your_api_key_here
 ```
