@@ -15,7 +15,7 @@
 <script setup>
 // Simple list component for forecast display
 
-import { useForecastStore } from '@/stores/forecast.js'
+import { useForecastStore } from '@/stores/forecast.ts'
 import ForecastCard from '@/components/forecast/ForecastCard.vue'
 import ForecastCardLoading from '@/components/loading/ForecastCardLoading.vue'
 
